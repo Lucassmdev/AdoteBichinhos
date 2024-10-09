@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doação - adoteseubichinho.com.br</title>
+  <style>
+    * {
+      top: 0;
+      margin: 0;
+      padding: 0;
+      font-family: "Consolas", sans-serif;
+    }
+
+    #logo {
+      width: 50px;
+      height: 70px;
+    }
+
+    .menu {
+      background-color: #9F9F5F;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .menu ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .menu ul li {
+      padding: 5px 15px;
+    }
+
+    .menu ul li:hover {
+      background-color: orange;
+    }
+
+    .menu ul li a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .cabecalho {
+      background-color: #E0FFFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .secao {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    article {
+      margin: 10px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    img {
+      width: 300px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    footer {
+      background-color: navy;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    main {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+    }
+
+    .form-container h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-group button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .form-group button:hover {
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="menu">
+    <img alt="logo" src="modelo-de-logotipo-para-animais-de-estimacao_121126-original-removebg-preview.png" id="logo">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="form_doacao.html">Doação</a></li>
+      <li><a href="form_contato.html">Contato</a></li>
+    </ul>
+  </nav>
+  <header class="cabecalho">
+    <h1>Adote seu bichinho</h1>
+  </header>
+  <main>
+    <div class="form-container">
+      <h2>Formulário de Adoção</h2>
+      <form id="adocaoForm"
+        action="https://script.google.com/macros/s/AKfycbwcMKbbagyrWCNi16DdQLS5jgZGcUsspydZpQ0RGpj2LFEYbWspkBLdhwEyM8CLxP97/exec"
+        method="POST">
+        <div class="form-group">
+          <label for="name">Seu Nome:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Seu Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Seu Telefone:</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="mascote">Qual mascote deseja adotar?</label>
+          <select id="mascote" name="mascote" required>
+            <option value="arisco">Arisco</option>
+            <option value="joaquim">Joaquim</option>
+            <option value="pelucio">Pelúcio</option>
+            <option value="boris">Bóris</option>
+            <option value="pudim">Pudim</option>
+            <option value="sheyla">Sheyla</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="mensagem">Mensagem (opcional):</label>
+          <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit">Enviar Adoção</button>
+        </div>
+      </form>
+    </div>
+  </main>
+  <footer>
+    @adoteseugatinho
+  </footer>
+
+  <script>
+    document.getElementById('adocaoForm').addEventListener('submit', function (event) {
+      event.preventDefault(); // Evita que o formulário seja enviado imediatamente
+      alert('Formulário enviado com sucesso!'); // Exibe o alerta
+      this.submit(); // Envia o formulário após o alerta
+    });
+
+
+  </script>
+</body>
+
+</html>
